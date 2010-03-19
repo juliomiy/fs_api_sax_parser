@@ -64,6 +64,24 @@ private String name;
 private URL photo;
 private String gender;
 private String email;
+private String facebook;
+private String twitter;
+
+public String getFacebook() {
+	return facebook;
+}
+public void setFacebook(String facebook) {
+	this.facebook = facebook;
+}
+public String getTwitter() {
+	return twitter;
+}
+public void setTwitter(String twitter) {
+	this.twitter = twitter;
+}
+public void setPhoto(URL photo) {
+	this.photo = photo;
+}
 @Override
 public int compareTo(Message o) {
 	// TODO Auto-generated method stub
@@ -74,6 +92,8 @@ public String toString() {
 	StringBuilder builder = new StringBuilder();
 	builder.append("Message [email=");
 	builder.append(email);
+	builder.append(", facebook=");
+	builder.append(facebook);
 	builder.append(", firstname=");
 	builder.append(firstname);
 	builder.append(", gender=");
@@ -86,6 +106,8 @@ public String toString() {
 	builder.append(name);
 	builder.append(", photo=");
 	builder.append(photo);
+	builder.append(", twitter=");
+	builder.append(twitter);
 	builder.append(", user=");
 	builder.append(user);
 	builder.append("]");

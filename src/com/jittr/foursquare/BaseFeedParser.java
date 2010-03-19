@@ -13,6 +13,10 @@ public abstract class BaseFeedParser implements FeedParser {
     static final String FSLASTNAME="lastname";
     static final String FSPHOTO="photo";
     static final String FSEMAIL="email";
+    static final String FSTWITTER = "twitter";
+    static final String FSFACEBOOK = "facebook";
+    //static final int FSFRIENDSAPI=0;
+    //static final int FSUSERAPI=1;
     
 	protected BaseFeedParser(String feedUrl){
 		try {

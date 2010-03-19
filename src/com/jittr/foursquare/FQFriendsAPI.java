@@ -9,12 +9,13 @@ public class FQFriendsAPI extends FourSquareHandler {
 	public void startElement(String uri, String localName, String name,
 			Attributes attributes) throws SAXException {
 		super.startElement(uri, localName, name, attributes);
-		if (localName.equalsIgnoreCase(FSUSER)){
+		//System.out.println("localname= " + localName +  " name = " + name + " uri = " + uri);
+		if (name.equalsIgnoreCase(FSUSER)){
 			this.currentMessage = new Message();
 		}
 	}
 	@Override
-	public void endElement(String uri, String localName, String name)
+	public void endElement(String uri, String name, String localName)
 			throws SAXException {
 		super.endElement(uri, localName, name);
 		if (this.currentMessage != null){
@@ -26,6 +27,8 @@ public class FQFriendsAPI extends FourSquareHandler {
 				currentMessage.setId(builder.toString());
 			} else if (localName.equalsIgnoreCase(FSEMAIL)){
 				currentMessage.setEmail(builder.toString());
+			} else if (localName.equalsIgnoreCase(FSPHOTO)) {
+				currentMessage.setPhoto(builder.toString());
 			} else if (localName.equalsIgnoreCase(FSUSER)){
 				messages.add(currentMessage);
 			}
